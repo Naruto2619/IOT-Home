@@ -30,5 +30,8 @@ io.on('connection',function(socket){
         });
     })
 });
+sp.on('error', function(err) {
+    console.error('error', err);
+  });
 server.listen(3000);
 console.log('yep its working');

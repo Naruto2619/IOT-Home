@@ -7,6 +7,7 @@ onSocketNotification = function(data) {
     socket.emit('lightStatus', text.text());
 };
 togglelight = function(){
+    console.log("nooo bob");
     text.text()==="off"?text.text("on"):text.text("off");
     socket.emit('lightstatus',text.text());
 }

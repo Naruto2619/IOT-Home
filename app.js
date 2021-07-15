@@ -13,6 +13,7 @@ SerialPort = require('serialport');
 sp = new SerialPort('COM9', {
     baudRate: 115200
 }),
+arduinoMessage="";
 sendMessage = function(buffer, socket) {
     arduinoMessage += buffer.toString();
     if (arduinoMessage.indexOf('\r') >= 0) {

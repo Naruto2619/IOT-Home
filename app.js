@@ -12,7 +12,7 @@ app.get("/",(req,res)=>{
 SerialPort = require('serialport');
 sp = new SerialPort('COM9', {
     baudRate: 115200
-}),
+});
 arduinoMessage="";
 sendMessage = function(buffer, socket) {
     arduinoMessage += buffer.toString();

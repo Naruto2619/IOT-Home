@@ -1,4 +1,4 @@
-var socket = io();
+var socket = io("https://homey-auto.herokuapp.com/");
 var button = $("button");
 var text = $("#butt");
 onSocketNotification = function(data) {

@@ -36,7 +36,7 @@ io.on('connection',function(socket){
 sp.on('error', function(err) {
     console.error('error', err);
   });
-server.listen(process.env.PORT,function(){
+server.listen(PORT,function(){
     console.log("runn");
 });
 console.log('yep its working');

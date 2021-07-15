@@ -4,6 +4,7 @@ var app = express();
 var server = require('http').createServer(app);
 var io = require('socket.io')(server);
 var cors = require('cors');
+var PORT = process.env.PORT || 3000;
 app.use(cors());
 app.use(express.static(__dirname));
 app.get("/",(req,res)=>{
@@ -22,6 +23,7 @@ sendMessage = function(buffer, socket) {
     }
 };
 io.on('connection',function(socket){
+    console.log("connected");
     sp.on('data', function(data) {
         sendMessage(data, socket);
     });
@@ -34,5 +36,7 @@ io.on('connection',function(socket){
 sp.on('error', function(err) {
     console.error('error', err);
   });
-server.listen(process.env.PORT||3000);
+server.listen(process.env.PORT,function(){
+    console.log("runn");
+});
 console.log('yep its working');

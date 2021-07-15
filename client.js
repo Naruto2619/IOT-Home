@@ -1,4 +1,4 @@
-var socket = io.connect('https://homey-auto.herokuapp.com/');
+var socket = io();
 var button = $("button");
 var text = $("#butt");
 onSocketNotification = function(data) {
@@ -7,7 +7,6 @@ onSocketNotification = function(data) {
     socket.emit('lightStatus', text.text());
 };
 togglelight = function(){
-    console.log("nooo bob");
     text.text()==="off"?text.text("on"):text.text("off");
     socket.emit('lightstatus',text.text());
 }

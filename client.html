@@ -8,6 +8,10 @@
         <script src="/socket.io/socket.io.js"></script>
         <script>
             var socket = io();
+            var el;
+            socket.on('time',function(timeString){
+                console.log("hello there");
+            });
         </script>
         <script src="client.js"></script>
     </body>

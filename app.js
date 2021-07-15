@@ -24,6 +24,7 @@ sendMessage = function(buffer, socket) {
 };
 io.on('connection',function(socket){
     console.log("connected");
+    setInterval(() => io.emit('time', new Date().toTimeString()), 1000);
     sp.on('data', function(data) {
         sendMessage(data, socket);
     });
